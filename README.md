@@ -10,13 +10,19 @@ I'm looking for creative people who have waited a long time for their levels and
 English, Spanish, Russian, Italian community and more.
 
 -⭐ Rate Standards Too Low.
+
+
 -⌚20/7 Support.
 
--Android/PC, soon iOS and MacOS.
+
+-📱 Android and 🖥️ PC, soon iOS and MacOS.
+
 
 -📈Newly Created, Active and Updated.
 
+
 -⚙️Geode For Android Support.
+
 
 -✅If you want more, ask for it, but not too much.
 
