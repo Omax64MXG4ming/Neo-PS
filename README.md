@@ -31,6 +31,8 @@ English, Spanish, Russian, Italian community and more.
 ## Note 📌
 Now only is for Android and PC , 1.0.0 Alpha Version, no texture , But Neo PS Texture
 
+Database For Switcher: ``https://neo.x10.mx/database/``
+          
 [![Neo PS](https://invidget.switchblade.xyz/TdB33cAyMn)](https://discord.gg/TdB33cAyMn)
 
 [NEO WEB HOME](https://neops.x10.mx/)
