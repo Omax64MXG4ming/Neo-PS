@@ -39,9 +39,9 @@ Database For Switcher: ``https://neo.x10.mx/database/``
 
 [Neo Stats](https://neops.x10.mx/stats/)
 
-[Dashboard](https://neops.x10.mx/dashboard/)
+[Dashboard](https://neops.x10.mx/database/dashboard/)
 
-[Wiki](https://neops.x10.mx/)
+[Wiki](https://neops.x10.mx/html/)
 
 [Browser](https://neo.x10.mx/browser/)
 
