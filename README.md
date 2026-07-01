@@ -1,7 +1,8 @@
-**Welcome to** 
-# Neo PS
+## **Welcome to** 
 
-Hello, I'm OmarMR, owner of Neo "GDPS", and I'm sending you a warm greeting. What's new with this **GDPS** here?
+<img src="https://neo.x10.mx/logo.png">
+
+Hello, I'm [OmarMR](https://youtube.com/@omarstudiosoff?si=9x2-l5zVXhKmtvEz) , owner of [Neo "GDPS"](https://neo.x10.mx/), and I'm sending you a warm greeting. What's new with this **GDPS** here?
 
 ## Information
 
@@ -37,8 +38,9 @@ Now only is for Android and PC , 1.0.0 Alpha Version, no texture , But Neo PS Te
 [Neo Stats](https://neops.x10.mx/stats/)
 
 [Dashboard](https://neops.x10.mx/dashboard/)
+
 [Wiki](https://neops.x10.mx/)
 
-[Browser](https://neops.x10.mx/browser/)
+[Browser](https://neo.x10.mx/browser/)
 
 Sorry ,  no have SSL
