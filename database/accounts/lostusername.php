@@ -2,9 +2,9 @@
 session_start();
 /* CONFIGURACIÓN */
 $host = "localhost";
-$user = "noxfpmfd_neo";
-$pass = "web_free";
-$db   = "noxfpmfd_neo";
+$user = "user";
+$pass = "h";
+$db   = "root";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
