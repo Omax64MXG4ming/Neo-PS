@@ -1,8 +1,16 @@
+<style>
+body { 
+background:url("./bg.png") no-repeat center center;
+    background-size:cover;
+    background-attachment:fixed;
+}
+          
+</style>
 ## **Welcome to** 
 
-<img src="https://neo.x10.mx/logo.png">
+<img src="https://neops.x10.mx/logo.png">
 
-Hello, I'm [OmarMR](https://youtube.com/@omarstudiosoff?si=9x2-l5zVXhKmtvEz) , owner of [Neo "GDPS"](https://neo.x10.mx/), and I'm sending you a warm greeting. What's new with this **GDPS** here?
+Hello, I'm [OmarMR](https://youtube.com/@omarstudiosoff?si=9x2-l5zVXhKmtvEz) , owner of [Neo "GDPS"](https://neops.x10.mx/), and I'm sending you a warm greeting. What's new with this **GDPS** here?
 
 ## Information
 
@@ -31,7 +39,7 @@ English, Spanish, Russian, Italian community and more.
 ## Note 📌
 Now only is for Android and PC , 1.0.0 Alpha Version, no texture , But Neo PS Texture
 
-Database For Switcher: ``https://neo.x10.mx/database/``
+Database For Switcher: ``https://neops.x10.mx/database/``
           
 [![Neo PS](https://invidget.switchblade.xyz/TdB33cAyMn)](https://discord.gg/TdB33cAyMn)
 
@@ -43,7 +51,7 @@ Database For Switcher: ``https://neo.x10.mx/database/``
 
 [Wiki](https://neops.x10.mx/html/)
 
-[Browser](https://neo.x10.mx/browser/)
+[Browser](https://neops.x10.mx/browser/)
 
 
 If you try to hack my server you won't be able to, you need to be on the domain, and the password isn't the real one, haha.
