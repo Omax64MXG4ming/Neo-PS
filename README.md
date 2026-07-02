@@ -1,11 +1,4 @@
-<style>
-body { 
-background:url("./bg.png") no-repeat center center;
-    background-size:cover;
-    background-attachment:fixed;
-}
-          
-</style>
+
 ## **Welcome to** 
 
 <img src="https://neops.x10.mx/logo.png">
