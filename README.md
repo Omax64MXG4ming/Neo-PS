@@ -45,4 +45,5 @@ Database For Switcher: ``https://neo.x10.mx/database/``
 
 [Browser](https://neo.x10.mx/browser/)
 
-Sorry ,  no have SSL
+
+If you try to hack my server you won't be able to, you need to be on the domain, and the password isn't the real one, haha.
