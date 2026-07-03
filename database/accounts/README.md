@@ -1,3 +1,3 @@
 # Server Files
 
-Neo PS Account Files and Bot
+Neo PS Account Files
