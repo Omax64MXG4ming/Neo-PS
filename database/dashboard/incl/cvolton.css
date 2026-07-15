@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 @media screen and (max-width: 1537px) {
 	body {overflow-y: auto !important}
@@ -32,11 +32,11 @@
     .songidyeah {font-size: 11px !important;}
 	.btn-group {right: 5px !important;}
 	.btn-group button, .btn-group a, .btn-group i {font-size: 13px !important;overflow-wrap: anywhere; height: 100%;}
-	.mainpagecardh1 {font-size:30px !important;}
+	.mainpagecardh1 {font-size:27px !important;}
 	.mph1 {font-size:20px !important;height: 40px !important; width: 40px !important;}
 	.welcomeh1 {font-size:29px !important;}
 	.welcomep, .mpp {font-size:17px !important;}
-	.welcomeh3 {font-size:25px !important;}
+	.welcomeh3 {font-size:20px !important;}
 	.mpsmall {font-size:12px !important;}
 	.profileform{width:95vw !important;}
 	.profilemsg{font-size:17px !important;}
@@ -122,32 +122,13 @@
 }
 
 * {
-    font-family: 'Google Sans', 'Inter', 'Segoe UI' , 'Calibri Light', 'Arial';
+    font-family: 'Bellota Text', 'Google Sans', 'Inter', 'Segoe UI' , 'Calibri Light', 'Arial';
 }
 
 #ads, .adsbygoogle, #ads_bottom_static {
     display: none !important;
 }
 
-/* anim */
-
-#htmlpage {
-    animation: pageIn .45s ease;
-}
-
-@keyframes pageIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* end anim */
 /* extra 3 */
 
 #loader {
@@ -168,23 +149,6 @@
 
 /* extra 3 end */
 
-
-/* lilcard anim */
-.form, .lilcard {
-    animation: fadeMove 0.5s ease-out forwards;
-}
-
-@keyframes fadeMove {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* lilcard anim end */
 /* body test */
 body {
     opacity: 0;
@@ -249,12 +213,14 @@ body {
 
 
 /* extra end */
+
+
 .btn-group {
 	position: fixed;
 	bottom: -50px;
 	right: 20px;
 	backdrop-filter: blur(2px);
-	background: #FFFFF;
+	background: #00000050;
 }
 
 .closebtn {
@@ -319,15 +285,31 @@ input, select {
 
 .no {
 	display: block;
-  	transition: 0.5s;
+  	transition: 0.3s;
 }
 
 .nav-link {
-	transition: 0.5s;
+	transition: 0.2s;
+    background-color: rgb(0 0 0 / 2%);
 }
 
 .flag {
 	vertical-align: sub;
+}
+
+.footer {
+  	display: flex;
+  	justify-content: space-between;
+	position: fixed;
+    bottom: 0px;
+    font-size: 15px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    color: #c0c0c0;
+    justify-self: center;
+    background: linear-gradient(0deg, rgba(33,37,41,1) 0%, rgba(30,33,36,0) 100%);
+    z-index: 9999;
 }
 
 .profilepic {
@@ -437,6 +419,7 @@ input, select {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	text-align: center;
+    
 }
 
 .checkbox {
@@ -759,7 +742,7 @@ body {
 
 .btn-primary,
 .btn-primary:visited {
-    background-color: #00000;
+    background-color: #212529;
     color: #fff;
     font-weight: 700;
     font-size: 15px;
@@ -911,7 +894,7 @@ body {
     border: none;
     border-radius: 500px;
     width: 100%;
-    transition: 0.5s;
+    transition: 0.3s;
     cursor: default;
 }
 
@@ -919,4 +902,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-d
+    flex-direction: column;
+    background: #181a1b;
+    width: max-content;
+    margin: auto auto;
+    z-index: 9000;
+ 
