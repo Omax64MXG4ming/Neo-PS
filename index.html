@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="icon" type="image/png" sizes="64x64" href="https://neops.x10.mx/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 <title>Neo PS</title>
+
 <style>
 
- *{
+/* RESET */
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Bellota Text, sans-serif;
 }
 
 html,body{
@@ -22,12 +26,11 @@ html,body{
 
 /* BACKGROUND */
 body{
-    background:url("https://neops.x10.mx/bg.png") no-repeat center center;
+    background:url("bg.png") no-repeat center center;
     background-size:cover;
     background-attachment:fixed;
 }
-  
-  
+
 /* OVERLAYS */
 .overlay,.light{
     position:fixed;
@@ -61,8 +64,6 @@ body{
     height:100vh;
     z-index:1;
 }
-  
-  
 
 /* CENTER */
 .center{
@@ -76,11 +77,28 @@ body{
     z-index:5;
 }
 
-  
 /* LOGO */
 .logo{
     width:min(420px,80vw);
     animation:float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+@keyframes glow{
+    0%,100%{
+        filter:brightness(1)
+        drop-shadow(0 0 15px rgba(0,170,255,.5))
+        drop-shadow(0 0 35px rgba(0,120,255,.3));
+    }
+    50%{
+        filter:brightness(1.4)
+        drop-shadow(0 0 30px rgba(80,200,255,.9))
+        drop-shadow(0 0 70px rgba(0,120,255,.7));
+    }
 }
 
 /* TEXT */
@@ -154,14 +172,47 @@ body{
     from{transform:rotate(0);}
     to{transform:rotate(360deg);}
 }
+
+/* INTRO */
+#intro{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:fadeOut 2.8s ease forwards;
+    animation-delay:1.8s;
+}
+
+.intro-logo{
+    width:220px;
+    animation:introPop 1.6s ease forwards;
+}
+
+@keyframes introPop{
+    0%{transform:scale(.4);opacity:0;}
+    40%{transform:scale(1.2);opacity:1;}
+    100%{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeOut{
+    to{opacity:0;visibility:hidden;}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .title{font-size:1.6rem;}
+}
+
 </style>
 </head>
-<body>
-  
-  
 
-  
-  
+<body>
+
+
 <div class="overlay"></div>
 <div class="light"></div>
 
@@ -170,26 +221,40 @@ body{
 <button class="music" onclick="toggleMusic()" id="musicBtn">🎵 Music</button>
 
 <audio id="bgmusic" loop>
-    <source src="https://neops.x10.mx/menuLoop.mp3" type="audio/mpeg">
+    <source src="menuLoop.mp3" type="audio/mpeg">
 </audio>
 
 <div class="center">
 
-    <img src="https://neops.x10.mx/logo.png" class="logo">
+    <img src="logo.png" class="logo">
 
-    <div class="title">Neo PS</div>
-    <div class="subtitle">Private server, from me to everyone</div>
+  
+
+    <div class="active">Active Accounts: <?php echo $active; ?></div>
 
     <div class="buttons">
-        <a href="https://browser.neops.x10.mx/" class="btn">📊 Browser</a>
-        <a href="html/" class="btn">📊 Wiki</a>
-        <a href="https://github.com/Omax64MXG4ming/Neo-PS/releases" class="btn">📥 Download</a>
-        <a href="https://neops.x10.mx/database/dashboard/" class="btn">🔮 Dashboard</a>
+        <a href="/download/" class="btn">📥 Download</a>
+        <a href="/database/dashboard/" class="btn">⚙️ Dashboard</a>
+      <a href="https://gdpshub.com/gdps/5785" class="btn">⬜ GDPSHub</a>
+      <a href="/browser/" class="btn">🌐 Browser</a>
+       <a href="/html/" class="btn">📌 Wiki</a>
     </div>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/WclLsBd4TAo">
+</iframe>
+
 
 </div>
 
 <script>
+
+/* INTRO REMOVE */
+<?php if($showIntro): ?>
+setTimeout(()=>{
+    const i=document.getElementById("intro");
+    if(i) i.remove();
+},2800);
+<?php endif; ?>
 
 /* MUSIC */
 let music=document.getElementById("bgmusic");
@@ -207,7 +272,7 @@ function toggleMusic(){
         music.pause();
         localStorage.setItem("neo_music","off");
         btn.classList.remove("active","spin");
-        btn.innerHTML="🎵 Musica";
+        btn.innerHTML="🎵 Music";
     }
 }
 
