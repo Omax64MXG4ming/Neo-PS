@@ -3,35 +3,47 @@
 
 <img src="https://neops.x10.mx/logo.png">
 
-Hello, I'm [OmarMR](https://youtube.com/@omarstudiosoff?si=9x2-l5zVXhKmtvEz) , owner of [Neo "GDPS"](https://neops.x10.mx/), and I'm sending you a warm greeting. What's new with this **GDPS** here?
+Hello, I'm OmarMR, owner of [Neo "GDPS"](https://neops.x10.mx/), and I'm sending you a warm greeting. What's new with this **GDPS** here?
 
 ## Information
 
-I'm looking for creative people who have waited a long time for their levels and haven't received any ratings. Guess what? Here, **EVERYTHING is possible**. Your goals that you've been waiting for will be here for a long time, and also...Looking for good, kind, and dedicated gamers to become **moderators**! Where you can be a moderator for the first time , I'm also looking for a team interested in helping me on Discord for staff and trial staff. Don't miss out on that exclusive content and Neo! From me, 
+I'm looking for creative people who have waited a long time for their levels and haven't received any ratings. Guess what? Here, **EVERYTHING is possible**. 
 
-English, Spanish, Russian, Italian community and more.
+* Your goals that you've been waiting for will be here for a long time, and also...
 
--⭐ Rate Standards Too Low.
+Looking for good, kind, and dedicated gamers to become **moderators**! YES
 
+Where you can be a moderator for the first time , I'm also looking for a team interested in helping me on Discord for staff and trial staff. for it Need More People with you!
 
--⌚20/7 Support.
+Don't miss out on that exclusive content and Neo! , The New Styled GDPS
 
+With The 
+🇺🇸English Community , 🇪🇸Spanish , 🇷🇺Russian , 🇮🇹Italian and More!
 
--📱 Android and 🖥️ PC, soon iOS and MacOS.
+* ⭐ Rate Standards Too Low (Min : Medium and 1.0 Style and Up)
 
+* ⌚24/7 Support
 
--📈Newly Created, Active and Updated.
+* 📈Moderator App
 
+* 📱🖥️ Android/PC, soon iOS and MacOS 
 
--⚙️Geode For Android Support.
+* 📈Newly Created, Active and Updated
 
+* ⚙️ Custom Geode Launcher For Android , and Compatibility with GDPS Switcher!
 
--✅If you want more, ask for it, but not too much.
+* 🕶️Very very Fast Rate
 
+* ⬜ Texture Pack
 
-## Note 📌
-Now only is for Android and PC , 1.0.0 Alpha Version, no texture , But Neo PS Texture
+* 🤖  Our Custom Bot for This GDPS
 
+* ✅If you want more, ask for it, but not too much
+
++100 Levels In Game , But +33 Actvie accounts in PS , Daily,Weekly,Events,Lists,Map Packs and Leaderboards
+
+### Organized and Decorated!
+---
 Database For Switcher: ``https://neops.x10.mx/database/``
 
 <img src="https://neops.x10.mx/gdps.png">
