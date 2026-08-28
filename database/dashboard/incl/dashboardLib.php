@@ -1,44 +1,36 @@
 <?php
-$dbPath = '../'; // Path to main directory. It needs to point to main endpoint files. If you idn't change dashboard place, don't change this value. Usually it's '../' (cuz dashboard folder is inside main endpoints folder) (https://imgur.com/a/P8LdhzY).
+$dbPath = '../database/';
 require __DIR__."/../".$dbPath."config/dashboard.php";
 require_once "auth.php";
 $au = new au();
 $dashCheck = $au->auth($dbPath);
-// Dashboard library
+// Dashboard Library
 class dashboardLib {
 	public function printHeader($isSubdirectory = true){
 		$this->handleLangStart();
+      if(file_exists("../../incl/cvolton.css")) $css = filemtime("../../incl/cvolton.css");
+		elseif(file_exists("../incl/cvolton.css")) $css = filemtime("../incl/cvolton.css");
+		else $css = filemtime("incl/cvolton.css");
+     
       	global $gdps;
 		global $dashboardIcon;
         global $background;
-		if(file_exists("../../incl/cvolton.css")) $css = filemtime("../../incl/cvolton.css");
-		elseif(file_exists("../incl/cvolton.css")) $css = filemtime("../incl/cvolton.css");
-		else $css = filemtime("incl/cvolton.css");
-     // test
-      
-      if(file_exists("../../../incl/cvolton.css")) $css = filemtime("../../../incl/cvolton.css");
-		elseif(file_exists("../../incl/cvolton.css")) $css = filemtime("../../incl/cvolton.css");
-		else $css = filemtime("../incl/cvolton.css");
-      
-      
-      // test end
-		echo '<!DOCTYPE html>
-				<html lang="en">
-					<head>
+        global $webIcon;
+        global $css;
 
+      echo '<!DOCTYPE html>
+				<html lang="en">
+
+			<head>
+    <link rel="icon" hrf="icon.png?'.$webIcon.'" type="image/png">
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-		      
-                 
-                 
-					  <link rel="icon" type="image/png" sizes="64x64" href="https://neops.x10.mx/icon.png">
+		      	
 						<meta charset="utf-8">
-						<meta name="color-scheme" content="black">
-							
+						<meta name="color-scheme" content="black">						
 						<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit="no">';
 if($isSubdirectory) echo '<base href="../">'; else echo '<base href="./">';
-				echo '<script src="incl/jq.js"></script>
-                
-                
+				echo '<script src="incl/jq.js"></script>             
+    <link rel="icon" type="image/png" sizes="64x64" src="icon.png?'.$webIcon.'">            
 <link rel="stylesheet" href="incl/cvolton.css?'.$css.'">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
@@ -47,30 +39,32 @@ if($isSubdirectory) echo '<base href="../">'; else echo '<base href="./">';
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
-
 <script src="incl/jsmediatags.js"></script>
 <script src="incl/imgcolr.js"></script>
 <link href="incl/fontawesome/css/fontawesome.css" rel="stylesheet">
 <link href="incl/fontawesome/css/brands.css" rel="stylesheet">
 <link href="incl/fontawesome/css/solid.css" rel="stylesheet">
 <link href="incl/fontawesome/css/regular.css" rel="stylesheet">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
-                          
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
+                       
 						  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<body><div id="loader"><img src="logo.png" alt="Logo" class="loader-logo">
-
+<body>
+<div id="loader"><img src="logo.png" alt="Logo" class="loader-logo">
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        const loader = document.getElementById("loader");
+        if (loader) loader.classList.add("hide");
+    }, 300);
+});
+</script>
+</div>
         <title>'.$gdps.'</title>';
 	echo '</head>
-
-</div>
-
 <div style="height: 100%;display: contents;">
-
-                ';
+              ';
 	}
 	public function getLocalizedString($stringName, $lang = '') {
 		if(empty($lang)) {
@@ -108,25 +102,29 @@ if($isSubdirectory) echo '<base href="../">'; else echo '<base href="./">';
 	public function printSong($content, $active = "", $isSubdirectory = true){
 		$this->printHeader($isSubdirectory);
 		$this->printNavbar($active, $isSubdirectory);
-		echo '<span id="htmlpage" style="width: 100%;height: 100%;display: contents;">'.$content.'</span>';
+		echo '
+<span id="htmlpage" style="width: 100%;height: 100%;display: contents;">'.$content.'</span>
+    ';
 	}
   
   /* footer */
   
   public function printFooter($sub = ''){
 		  global $dbPath;
-		  global $wiki;
-       global $github;
-       global $gdpshub;
+		global $wiki;
+        global $github;
+        global $gdpshub;
       	global $vk;
       	global $discord;
       	global $twitter;
       	global $youtube;
       	global $twitch;
-		echo '<div class="footer">'.$this->getLocalizedString("footer").'<div>';
+    
+		echo '<div class="footer">Neo PS 2026<div>';
+    
 // extra 10 
       	if($wiki != '') echo '<a href="'.$wiki.'"target="_blank"><img class="socials" style="width: 20px" src="'.$sub.'incl/socials/wiki.png"></a>';
-    if($github != '') echo '<a href="'.$github.'"target="_blank"><img class="socials" style="width: 20px" src="'.$sub.'incl/socials/git.png"></a>';
+    if($github != '') echo '<a href="'.$github.'"target="_blank"><img class="socials" style="width: 20px" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png"></a>';
     
 if($gdpshub != '') echo '<a href="'.$gdpshub.'"target="_blank"><img class="socials" style="width: 20px" src="https://gdpshub.com/assets/brand-assets/detail.png"></a>';
 
@@ -139,23 +137,15 @@ if($gdpshub != '') echo '<a href="'.$gdpshub.'"target="_blank"><img class="socia
       	if($twitch != '') echo '<a href="'.$twitch.'"target="_blank"><img class="socials" style="width: 20px" src="'.$sub.'incl/socials/twitch.png"></a>';
         echo '</div></div></div>
         
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        const loader = document.getElementById("loader");
-        if (loader) loader.classList.add("hide");
-    }, 300);
-});
-</script>      
-
-
-        </body></html>';
+  </body></html>
+  ';
 	}
   
   /* footer end */
   
 	public function printBoxFooter(){
-		echo '</div></div></div></span>';
+		echo '</div></div></div></span>
+        ';
 	}
 	
 	public function printLoginBox($content){
@@ -169,6 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	public function printNavbar($active, $isSubdirectory = true) {
 		global $gdps;
+        global $homeLink;
+        global $startLink;
+        global $listLink;
 		global $lrEnabled;
       	global $msgEnabled;
       	global $songEnabled;
@@ -223,8 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
            	case "profile":
 				$profileActive = "active tooactive";
 				break;
-            
-            
+         
 		}
 		echo '<nav id="navbarepta" class="navbar navbar-expand-lg navbar-dark menubar">
 			<input type="hidden" id="isSubdirectory" value="'.($isSubdirectory ? 'true' : 'false').'"></input>
@@ -238,9 +230,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav">
 				<li class="nav-item '.$homeActive.' ">
-						<a href=".$homeLink." onclick="a(\'../dashboard\')" style="background:none;border:none" class="nav-link" >
+						<a href="../../" class="dropdown-item dontblock" style="background:none;border:none">
+							<i class="fa-solid fa-x"></i> Exit Dashboard</a>
+                        
+            <ul class="navbar-nav">
+				<li class="nav-item '.$homeActive.' ">
+						<a href="'.$homeLink.'" onclick="a(\'../dashboard\')" style="background:none;border:none" class="nav-link" >
 							<i class="fa-solid fa-house"></i> '.$this->getLocalizedString("homeNavbar").'
-						</a>';
+						</a>            
+                        
+                        ';
 
 
 
@@ -322,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		echo '		
 					<li class="nav-item dropdown '.$statsActive.'">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle dontblock" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="fa-solid fa-chart-column" aria-hidden="true"></i> '.$this->getLocalizedString("statsSection").'
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -331,6 +330,11 @@ document.addEventListener("DOMContentLoaded", () => {
 							<a type="button" href="stats/modActionsList.php" onclick="a(\'stats/modActionsList.php\')"class="dropdown-item"><div class="icon"><i class="fa-solid fa-list" aria-hidden="false"></i></div>'.$this->getLocalizedString("modActionsList").'</a>
                             
 							<a type="button" href="stats/top24h.php" onclick="a(\'stats/top24h.php\')"class="dropdown-item"><div class="icon"><i class="fa-solid fa-list-ol" aria-hidden="false"></i></div>'.$this->getLocalizedString("leaderboardTime").'</a>
+                            
+        <a type="button" href="'.$listLink.'" class="dropdown-item dontblock"><div class="icon"><i class="fa-solid fa-list" aria-hidden="false"></i></div>DemonList</a>           
+        
+        <a type="button" href="../../data/stats.php" class="dropdown-item dontblock"><div class="icon"><i class="fa-solid fa-globe" aria-hidden="false"></i></div>General Stats</a>           
+                            
                             
 						</div>
 					</li>
@@ -422,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         
                        
                
-							<a type="button" href="profile/'.$userName.'" onclick="a(\'profile/'.$userName.'\', true, true)" class="dropdown-item"><div class="icon"><i class="fa-regular fa-id-badge"></i></div>'.$this->getLocalizedString("profile").'</a>';
+							<a type="button" href="profile/" onclick="a(\'profile/\', true, true)" class="dropdown-item"><div class="icon"><i class="fa-regular fa-id-badge"></i></div>'.$this->getLocalizedString("profile").'</a>';
 							$claaan = $gs->isPlayerInClan($_SESSION["accountID"]);
 							if($claaan) echo '<a href="clan/'.$gs->getClanInfo($claaan, "clan").'" onclick="a(\'clan/'.$gs->getClanInfo($claaan, "clan").'\', false, true)" class="dropdown-item"><div class="icon"><i class="fa-solid fa-dungeon"></i></div>'.$this->getLocalizedString("yourClan").'</a>';
 							echo '<a class="dropdown-item dontblock" href="login/logout.php"><div class="icon"><i class="fa-solid fa-sign-out" aria-hidden="false"></i></div>'.$this->getLocalizedString("logout").'</a>
@@ -448,14 +452,20 @@ document.addEventListener("DOMContentLoaded", () => {
 											<input type="password" class="form-control login-input" id="passwordField" name="password" placeholder="'.$this->getLocalizedString("password").'">
 										</div>
 										'.(!$preactivateAccounts ? ($mailEnabled ? '<button type="button" onclick="a(\'login/forgotPassword.php\')" class="forgotPassword">'.$this->getLocalizedString("forgotPasswordTitle").'</button>' : '<button type="button" onclick="a(\'login/activate.php\')" class="forgotPassword">'.$this->getLocalizedString("activateAccount").'</button>') : '').'
+                                        
+        <ul class="navbar-nav">
+				<li class="nav-item '.$homeActive.' ">
+						<a href="../../database/accounts/lostusername.php" class="dropdown-item dontblock" style="background:none;border:none">Lost Username</a>                               
+  
+                                        
+                                        
 										<div style="display: flex;flex-wrap: wrap;justify-content: center"><button type="submit" class="btn-primary" id="submit">'.$this->getLocalizedString("login").'</button>
 										</form>
 										<form action="login/register.php" style="width: 80%;margin-top: 10px;margin-bottom: -5px">
 											<button type="button" onclick="a(\'login/register.php\')" class="btn btn-primary">'.$this->getLocalizedString("register").'</button>
-        
-										</div>
-									</form>
-						</div>';
+       </div>
+		</form>
+	</div>';
 		}	
 		echo '</ul>
 			</div>
@@ -1599,7 +1609,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	public function title($title) {
       	global $gdps;
-		echo '<title>'.$title.' | '.$gdps.'</title>';
+        global $webIcon;
+		echo '
+        
+        <link rel="icon" href="'.$webIcon.'" type="image/png">
+        
+        <title>'.$title.' In '.$gdps.'</title>';
 	}
 }
 ?>
