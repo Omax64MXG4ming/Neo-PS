@@ -4,7 +4,7 @@ require __DIR__."/../".$dbPath."config/dashboard.php";
 require_once "auth.php";
 $au = new au();
 $dashCheck = $au->auth($dbPath);
-// Dashboard Library
+// Dashboard library
 class dashboardLib {
 	public function printHeader($isSubdirectory = true){
 		$this->handleLangStart();
@@ -22,7 +22,7 @@ class dashboardLib {
 				<html lang="en">
 
 			<head>
-    <link rel="icon" hrf="icon.png?'.$webIcon.'" type="image/png">
+    <link rel="icon" href="icon.png?'.$webIcon.'" type="image/png">
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 		      	
 						<meta charset="utf-8">
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </div>
-        <title>'.$gdps.'</title>';
+        <title>Main | '.$gdps.'</title>';
 	echo '</head>
 <div style="height: 100%;display: contents;">
               ';
@@ -321,7 +321,7 @@ if($gdpshub != '') echo '<a href="'.$gdpshub.'"target="_blank"><img class="socia
 		}
 		echo '		
 					<li class="nav-item dropdown '.$statsActive.'">
-						<a class="nav-link dropdown-toggle dontblock" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle dontblock" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="fa-solid fa-chart-column" aria-hidden="true"></i> '.$this->getLocalizedString("statsSection").'
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -331,10 +331,11 @@ if($gdpshub != '') echo '<a href="'.$gdpshub.'"target="_blank"><img class="socia
                             
 							<a type="button" href="stats/top24h.php" onclick="a(\'stats/top24h.php\')"class="dropdown-item"><div class="icon"><i class="fa-solid fa-list-ol" aria-hidden="false"></i></div>'.$this->getLocalizedString("leaderboardTime").'</a>
                             
-        <a type="button" href="'.$listLink.'" class="dropdown-item dontblock"><div class="icon"><i class="fa-solid fa-list" aria-hidden="false"></i></div>DemonList</a>           
+        <a type="button" href="'.$listLink.'" class="dropdown-item dontblock"><div class="icon"><i class="fa-solid fa-dragon" aria-hidden="false"></i></div>DemonList</a>           
         
         <a type="button" href="../../data/stats.php" class="dropdown-item dontblock"><div class="icon"><i class="fa-solid fa-globe" aria-hidden="false"></i></div>General Stats</a>           
-                            
+        
+            <a type="button" href="../../LAN/gdps/index.php" class="dropdown-item dontblock"><div class="icon"><i class="fa-solid fa-globe" aria-hidden="false"></i></div>SERVER STATUS</a>                             
                             
 						</div>
 					</li>
@@ -420,7 +421,7 @@ if($gdpshub != '') echo '<a href="'.$gdpshub.'"target="_blank"><img class="socia
 			$userName = $gs->getAccountName($_SESSION["accountID"]);
 			echo'<li class="nav-item dropdown '.$profileActive.'">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa-solid fa-user-circle" aria-hidden="true"></i> '.$userName.'
+							<i class="fa-solid fa-user-circle" aria-hidden="true"></i> Account
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         
@@ -475,7 +476,7 @@ if($gdpshub != '') echo '<a href="'.$gdpshub.'"target="_blank"><img class="socia
 		<div id="audioPlayer" class="audioDiv">
 			<div class="cover" onclick="player.play()">
 				<i id="audioButton" class="fa-solid fa-circle-play image"></i>
-				<img id="audioImage" class="image" src="incl/no-cover.png"></img>
+				<img id="audioImage" class="image" src="https://neops.x10.mx/rok/disc.png"></img>
 			</div>
 			<div class="track">
 				<p id="audioName" class="name">'.$this->getLocalizedString("songAddNameFieldPlaceholder").'</p>
