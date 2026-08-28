@@ -30,6 +30,54 @@ class indexLib {
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    
+    
+     
+<script>
+/* PARTICLES */
+const c=document.getElementById("particles");
+const x=c.getContext("2d");
+
+c.width=innerWidth;
+c.height=innerHeight;
+
+let p=[];
+
+for(let i=0;i<60;i++){
+    p.push({
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5),
+        dy:(Math.random()-0.5)
+    });
+}
+
+function draw(){
+    x.clearRect(0,0,c.width,c.height);
+
+    x.fillStyle="rgba(255,255,255,.6)";
+
+    for(let i of p){
+        x.beginPath();
+        x.arc(i.x,i.y,i.r,0,Math.PI*2);
+        x.fill();
+
+        i.x+=i.dx;
+        i.y+=i.dy;
+
+        if(i.x<0||i.x>c.width)i.dx*=-1;
+        if(i.y<0||i.y>c.height)i.dy*=-1;
+    }
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+
+</script>
+    
+    
     ';
   }
    
@@ -319,7 +367,6 @@ src="https://www.youtube.com/embed/0rpauFqJkMk">
     }
   
   public function printAndroidGET() {
-    global $webIcon;
     global $android;
     global $getLauncher;
     echo '
@@ -856,5 +903,239 @@ draw();
     
     }
   
+           public function printPPS() {
+             
+             echo ' 
+<script>
+/* PARTICLES */
+const c=document.getElementById("particles");
+const x=c.getContext("2d");
+
+c.width=innerWidth;
+c.height=innerHeight;
+
+let p=[];
+
+for(let i=0;i<60;i++){
+    p.push({
+        x:Math.random()*c.width,
+        y:Math.random()*c.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5),
+        dy:(Math.random()-0.5)
+    });
+}
+
+function draw(){
+    x.clearRect(0,0,c.width,c.height);
+
+    x.fillStyle="rgba(255,255,255,.6)";
+
+    for(let i of p){
+        x.beginPath();
+        x.arc(i.x,i.y,i.r,0,Math.PI*2);
+        x.fill();
+
+        i.x+=i.dx;
+        i.y+=i.dy;
+
+        if(i.x<0||i.x>c.width)i.dx*=-1;
+        if(i.y<0||i.y>c.height)i.dy*=-1;
+    }
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+
+</script>
+             ';
+             }
+  
+  public function printStatusPG() {
+    global $webIcon;
+    echo '
+    
+    <title>Status | Neo PS</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Bellota Text, sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+/* BACKGROUND */
+body{
+    background:url("https://neops.x10.mx/bg.png") no-repeat center center;
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+/* OVERLAYS */
+.overlay,.light{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+}
+
+.overlay{
+    background:linear-gradient(135deg,#1d4ed8aa,#38bdf866);
+    z-index:1;
+}
+
+.light{
+    background:radial-gradient(circle,rgba(255,255,255,.08),transparent 40%);
+    animation:moveLight 10s linear infinite;
+    z-index:2;
+}
+
+@keyframes moveLight{
+    0%{transform:translate(-20%,-20%);}
+    50%{transform:translate(10%,10%);}
+    100%{transform:translate(-20%,-20%);}
+}
+
+/* PARTICLES */
+#particles{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    z-index:1;
+}
+
+/* CENTER */
+.center{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    width:100%;
+    max-width:1200px;
+    z-index:5;
+}
+
+/* LOGO */
+.logo{
+    width:min(420px,80vw);
+    animation:float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+@keyframes glow{
+    0%,100%{
+        filter:brightness(1)
+        drop-shadow(0 0 15px rgba(0,170,255,.5))
+        drop-shadow(0 0 35px rgba(0,120,255,.3));
+    }
+    50%{
+        filter:brightness(1.4)
+        drop-shadow(0 0 30px rgba(80,200,255,.9))
+        drop-shadow(0 0 70px rgba(0,120,255,.7));
+    }
+}
+
+/* TEXT */
+.title{
+    color:white;
+    font-size:2rem;
+    margin-top:10px;
+}
+
+.active{
+    color:#a5f3fc;
+    margin-top:8px;
+    font-size:.85rem;
+}
+
+/* INTRO */
+#intro{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:fadeOut 2.8s ease forwards;
+    animation-delay:1.8s;
+}
+
+.intro-logo{
+    width:220px;
+    animation:introPop 1.6s ease forwards;
+}
+
+@keyframes introPop{
+    0%{transform:scale(.4);opacity:0;}
+    40%{transform:scale(1.2);opacity:1;}
+    100%{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeOut{
+    to{opacity:0;visibility:hidden;}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .title{font-size:1.6rem;}
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="overlay"></div>
+<div class="light"></div>
+
+<canvas id="particles"></canvas>
+
+<div class="center">
+
+    <img src="https://neops.x10.mx/logo.png" class="logo">
+
+<iframe
+  src="https://rok.neops.x10.mx"
+  width="320"
+  height="140"
+  frameborder="0"
+  style="border: none; border-radius: 10px;"></iframe>
+
+  
+<iframe
+  src="https://status.bot-hosting.net/pub-api/embeds/de1"
+  width="320"
+  height="140"
+  frameborder="0"
+  style="border: none; border-radius: 10px;"></iframe>
+
+
+</div>
+ 
+
+</body>
+</html>
+    ';
+    
+    }
   
   }
