@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-<title>Neo PS</title>
+<title>Welcome | Neo PS</title>
 
 <style>
 
@@ -143,36 +143,6 @@ body{
     transform:scale(1.08);
     background:rgba(56,189,248,.35);
 }
-
-/* MUSIC */
-.music{
-    position:fixed;
-    top:15px;
-    right:15px;
-    z-index:10;
-    padding:10px 14px;
-    border-radius:12px;
-    background:rgba(0,0,0,.35);
-    border:1px solid rgba(255,255,255,.2);
-    color:white;
-    cursor:pointer;
-    backdrop-filter:blur(10px);
-}
-
-.music.active{
-    background:rgba(56,189,248,.35);
-    box-shadow:0 0 20px rgba(56,189,248,.6);
-}
-
-.music.spin{
-    animation:spin 2s linear infinite;
-}
-
-@keyframes spin{
-    from{transform:rotate(0);}
-    to{transform:rotate(360deg);}
-}
-
 /* INTRO */
 #intro{
     position:fixed;
@@ -218,26 +188,16 @@ body{
 
 <canvas id="particles"></canvas>
 
-<button class="music" onclick="toggleMusic()" id="musicBtn">🎵 Music</button>
-
-<audio id="bgmusic" loop>
-    <source src="https://neops.x10.mx/menuLoop.mp3" type="audio/mpeg">
-</audio>
-
 <div class="center">
 
     <img src="https://neops.x10.mx/logo.png" class="logo">
 
   
 
-    <div class="active">Active Accounts: <?php echo $active; ?></div>
-
     <div class="buttons">
         <a href="https://neops.x10.mx/download/" class="btn">📥 Download</a>
         <a href="https://neops.x10.mx/database/dashboard/" class="btn">⚙️ Dashboard</a>
       <a href="https://gdpshub.com/gdps/5785" class="btn">⬜ GDPSHub</a>
-      <a href="https://neops.x10.mx/browser/" class="btn">🌐 Browser</a>
-       <a href="https://neops.x10.mx/html/" class="btn">📌 Wiki</a>
     </div>
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/WclLsBd4TAo">
@@ -247,36 +207,6 @@ src="https://www.youtube.com/embed/WclLsBd4TAo">
 </div>
 
 <script>
-/* MUSIC */
-let music=document.getElementById("bgmusic");
-let btn=document.getElementById("musicBtn");
-
-function toggleMusic(){
-
-    if(music.paused){
-        music.volume=0.4;
-        music.play();
-        localStorage.setItem("neo_music","on");
-        btn.classList.add("active","spin");
-        btn.innerHTML="🎵 Playing";
-    }else{
-        music.pause();
-        localStorage.setItem("neo_music","off");
-        btn.classList.remove("active","spin");
-        btn.innerHTML="🎵 Music";
-    }
-}
-
-/* AUTO MUSIC */
-window.addEventListener("load",()=>{
-    if(localStorage.getItem("neo_music")==="on"){
-        music.play().then(()=>{
-            btn.classList.add("active","spin");
-            btn.innerHTML="🎵 Playing";
-        }).catch(()=>{});
-    }
-});
-
 /* PARTICLES */
 const c=document.getElementById("particles");
 const x=c.getContext("2d");
