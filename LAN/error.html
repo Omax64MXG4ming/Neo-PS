@@ -1,0 +1,489 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+ <link rel="icon" type="image/png" href="https://neops.x10.mx/icon.png" sizes="96x96" />
+<link rel="shortcut icon" href="https://neops.x10.mx/icon.ico" />
+</head>
+  <title>Neo PS — Error</title><style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+    background:
+        radial-gradient(circle at 50% -10%, #55c9ff 0%, #187bd1 35%, #0750a0 65%, #03295c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(70, 190, 255, .18);
+    filter: blur(70px);
+    animation: float 8s ease-in-out infinite;
+}
+
+.glow.one {
+    top: -250px;
+    left: -150px;
+}
+
+.glow.two {
+    right: -220px;
+    bottom: -250px;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -25px);
+    }
+}
+
+.particles {
+    position: absolute;
+    inset: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,.65);
+    border-radius: 50%;
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    from {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    85% {
+        opacity: .8;
+    }
+
+    to {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
+}
+
+
+
+.wrapper {
+    width: min(92%, 720px);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Logo */
+
+.logo {
+    font-size: clamp(32px, 7vw, 58px);
+    font-weight: 900;
+    letter-spacing: -3px;
+    text-shadow:
+        0 4px 0 #063b78,
+        0 7px 14px rgba(0,0,0,.35);
+    margin-bottom: 25px;
+    animation: logoIn .7s ease-out;
+}
+
+.logo span {
+    color: #e9faff;
+}
+
+@keyframes logoIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.error-card {
+    position: relative;
+    padding: 42px 35px 38px;
+    border-radius: 25px;
+
+    background: rgba(3, 38, 82, .62);
+    border: 2px solid rgba(255,255,255,.22);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.15);
+
+    backdrop-filter: blur(12px);
+
+    animation: cardIn .8s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.error-code {
+    font-size: clamp(90px, 20vw, 170px);
+    line-height: .85;
+    font-weight: 900;
+    letter-spacing: -8px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 6px 0 #07529c,
+        0 12px 25px rgba(0,0,0,.35);
+
+    margin-bottom: 25px;
+
+    animation: codeFloat 4s ease-in-out infinite;
+}
+
+@keyframes codeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.divider {
+    width: 80px;
+    height: 5px;
+    margin: 0 auto 24px;
+    border-radius: 10px;
+    background: #70d7ff;
+    box-shadow: 0 0 15px rgba(100,210,255,.7);
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: clamp(25px, 5vw, 36px);
+}
+
+.message {
+    margin: 0 auto;
+    max-width: 540px;
+    color: #d9efff;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+button,
+a.button {
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+
+    padding: 13px 25px;
+    border-radius: 12px;
+
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        180deg,
+        #39aef5,
+        #0867bb
+    );
+
+    box-shadow:
+        0 5px 0 #03437d,
+        0 10px 20px rgba(0,0,0,.25);
+
+    transition:
+        transform .15s ease,
+        filter .15s ease;
+}
+
+button:hover,
+a.button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+button:active,
+a.button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #03437d;
+}
+
+.secondary {
+    background: rgba(255,255,255,.12) !important;
+    box-shadow:
+        0 5px 0 rgba(0,0,0,.2) !important;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 22px;
+    color: rgba(255,255,255,.65);
+    font-size: 13px;
+}
+
+/* Responsive */
+
+@media (max-width: 500px) {
+
+    .error-card {
+        padding: 32px 20px;
+        border-radius: 20px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button,
+    a.button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+.pageIcon {
+width:75px;
+  margin-bottom:-20px;
+}
+</style></head><body><div class="background"><div class="glow one"></div>
+<div class="glow two"></div>
+
+<div class="particles">
+    <span class="particle" style="left:8%;animation-duration:12s;animation-delay:-2s"></span>
+    <span class="particle" style="left:18%;animation-duration:16s;animation-delay:-8s"></span>
+    <span class="particle" style="left:29%;animation-duration:11s;animation-delay:-4s"></span>
+    <span class="particle" style="left:42%;animation-duration:17s;animation-delay:-12s"></span>
+    <span class="particle" style="left:55%;animation-duration:13s;animation-delay:-6s"></span>
+    <span class="particle" style="left:67%;animation-duration:18s;animation-delay:-10s"></span>
+    <span class="particle" style="left:79%;animation-duration:12s;animation-delay:-3s"></span>
+    <span class="particle" style="left:91%;animation-duration:15s;animation-delay:-9s"></span>
+</div>
+
+</div><div class="wrapper"><div class="logo">
+  <img class="pageIcon" src="https://neops.x10.mx/icon.png">  NEO <span>PS</span>
+</div>
+
+<main class="error-card">
+
+    <div class="error-code" id="errorCode">404</div>
+
+    <div class="divider"></div>
+
+    <h1 id="errorTitle">
+        Page Don't found
+    </h1>
+
+    <p class="message" id="errorMessage">
+        The page you are looking for does not exist,
+has been moved, or is no longer available.
+    </p>
+
+    <div class="buttons">
+
+        <a class="button" href="/">
+            🏠 Back to Index
+        </a>
+
+        <button
+            class="secondary"
+            onclick="history.back()">
+            ← Previous Page
+        </button>
+
+    </div>
+
+</main>
+
+<div class="footer">
+    Neo PS • Geometry Dash Private Server
+    Server Provided by LiteSpeed & x10hosting
+</div>
+
+</div><script>
+
+/*
+==================================================
+ERROR CONFS
+==================================================
+
+EDITABLE VAULES FOR ERROR:
+
+404
+403
+500
+
+You can also leave it on "auto" to try to
+detect the error from the URL.
+
+==================================================
+*/
+
+const ERROR_CODE = "auto";
+
+
+const errors = {
+
+    404: {
+        title: "Page Not Found",
+        message:
+            "The page you are looking for does not exist, has been moved, or is no longer available."
+    },
+
+    403: {
+        title: "Access denied",
+        message:
+            "You do not have permission to access this resource. If you believe this is an error, please contact the administrator."
+    },
+
+    500: {
+        title: "Internal Server Error",
+        message:
+            "Oh no, an error occurred while trying to open the page. Let's see, there's an internal error on the requested page."
+    }
+
+};
+
+
+/*
+Detect Code 🧐
+*/
+
+let code = ERROR_CODE;
+
+if (code === "auto") {
+
+    /*
+    If Apache/Nginx redirects to this file
+with ?code=404, ?code=403, etc. YEP
+    */
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    code = params.get("code") || "404";
+}
+
+
+/*
+Validate Code
+*/
+
+if (!errors[code]) {
+    code = "404";
+}
+
+
+/*
+Refresh Page
+*/
+
+document.title =
+    "Neo PS — Error " + code;
+
+document.getElementById("errorCode")
+    .textContent = code;
+
+document.getElementById("errorTitle")
+    .textContent = errors[code].title;
+
+document.getElementById("errorMessage")
+    .textContent = errors[code].message;
+
+
+/*
+For error 500 we also display
+a reload button.
+*/
+
+if (code === "500") {
+
+    const buttons =
+        document.querySelector(".buttons");
+
+    const reload =
+        document.createElement("button");
+
+    reload.textContent = "↻ Try Again";
+
+    reload.onclick = function () {
+        location.reload();
+    };
+
+    buttons.appendChild(reload);
+}
+
+</script></body>
+</html>
