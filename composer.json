@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Omax64MXG4ming/Neo-PS"
+        }
+    ],
+    "require": {
+        "Omax64MXG4ming/Neo-PS": "main"
+    }
+}
