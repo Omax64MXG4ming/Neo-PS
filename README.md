@@ -1,10 +1,12 @@
+PSS, hey you, come here ,
+
+`What are you waiting for to see:`
+
 
 ## **Welcome to** 
 
 <img src="https://neops.x10.mx/logo.png">
 
-Hello, I'm OmarMR, owner of Neo PS and I'm sending you a warm greeting. 
-What's new with this GDPS here?
 
 ## Information
 
@@ -14,20 +16,21 @@ I'm looking for creative people who have waited a long time for your levels and 
 that you've been waiting for will be here for a long time, and also =
 
 Looking for good, kind, and dedicated gamers to become moderators!
-
-Where you can be a moderator for the first time , I'm also looking for a team interested in helping me on Discord for staff and trial staff. 
+Where you can be a moderator for the first time , I'm also looking for a team interested in helping me on Discord for staff and trial staff.
 for it Need More People with you!
 
 With The 
 🇺🇸English , 🇪🇸 Española, 🇷🇺Русский , 🇮🇹Italiano.
 
-* ⭐ Rate Standards Too Low (Min : Medium and 1.0 Style and Up) But don't abuse Re-Upload | VERY FAST RATE
+* ⭐ Rate Standards Too Low (Min : Medium and 1.0 Style and Up) But don't abuse Re-Upload | VERY FAST RATE  
 
 * ⌚ 24/7 Support with My PS Staff's and Mods helping you!
 * 📱/🖥️ Android/PC and iOS !
 * ⚙️ Custom Geode Launcher For Android , and Compatibility with GDPS Switcher!
 * 🤖  Our Custom Bot for This GDPS!
-* 📈 It's listed in the Recommended GDPS section on GDPSHub!
+* 📈 It's listed in the Best Upload GDPS section on GDPSHub!
+* ✅ What I'm telling you in this message is real!
+* 🔓 Server and Game Patch Updates, with New Content, Waiting the 2.209
 * 📢 And more of this content!
 
 With Levels , +40 Active accounts in PS , Daily,Weekly,Events,Lists,Map Packs and Leaderboards!
@@ -46,14 +49,12 @@ What do I mean? You can play and be relaxed in both the game and the Discord ser
 ## Come and join this community!
 https://discord.gg/TdB33cAyMn
 
+I do what I say.
+
 [WebSite](https://neops.x10.mx)
-
-[GDPSHub](https://gdpshub.com/gdps/5785)
-
+[GDPSHub ](https://gdpshub.com/gdps/5785)
 [Trailer](https://youtube.com/embed/WclLsBd4TAo)
-
 https://discord.com/events/1516253209029509150/1539342479067975840
-
 https://www.youtube.com/embed/0rpauFqJkMk
 
 ---
