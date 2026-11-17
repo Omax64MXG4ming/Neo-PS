@@ -1,3 +1,9 @@
+# 2026-11-17
+Only Textures For HD and UHD / -removed -* (CD)
+The "classes.dex" files of the Launcher for Android have been fixed
+The NeoNative.so files were rewritten
+Geode Loader textures were included if it cannot be downloaded
+
 # 2026-11-16
 Changed URL For Update APK to This Repository
 Fixed Bring Nodes For Geode And Launcher In Start Fixes by itself
